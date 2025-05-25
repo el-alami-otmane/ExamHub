@@ -1,0 +1,460 @@
+/* Dashboard Container */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: #f8fafc;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Top Navigation */
+.top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 15px 25px;
+  background-color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.user-info span {
+  font-weight: 500;
+  color: #2c3e50;
+  font-size: 0.95rem;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
+  padding: 25px;
+  overflow-y: auto;
+}
+
+/* Stats Summary */
+.stats-summary {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.stat-card {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+}
+
+.stat-card h3 {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.stat-card p {
+  color: #2c3e50;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Filter Section */
+.filter-section {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.filter-section h3 {
+  color: #2c3e50;
+  margin: 0 0 20px 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
+}
+
+.filter-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: #7f8c8d;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.filter-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background-color: white;
+  font-size: 0.9rem;
+  color: #2c3e50;
+  transition: all 0.2s;
+}
+
+.filter-group select:focus {
+  outline: none;
+  border-color: #3498db;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+.filter-group select:disabled {
+  background-color: #f8fafc;
+  color: #94a3b8;
+}
+
+/* Exams Grid */
+.exams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.exam-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.exam-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Exam Type Circle */
+.exam-type-container {
+  display: flex;
+  justify-content: center;
+  margin-top: -20px;
+  margin-bottom: 10px;
+}
+
+.exam-type-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.exam-type-circle.cc {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.exam-type-circle.tp {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.exam-type-circle.examen {
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+/* Card Header */
+.card-header {
+  padding: 15px 15px 5px 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #2c3e50;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.exam-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 8px;
+  font-size: 0.8rem;
+}
+
+.exam-date {
+  color: #7f8c8d;
+}
+
+.exam-type-label {
+  padding: 3px 8px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.exam-type-label.cc {
+  background-color: #fadbd8;
+  color: #c0392b;
+}
+
+.exam-type-label.tp {
+  background-color: #d6eaf8;
+  color: #2980b9;
+}
+
+.exam-type-label.examen {
+  background-color: #d5f5e3;
+  color: #27ae60;
+}
+
+/* Card Body */
+.card-body {
+  padding: 15px;
+}
+
+.card-body p {
+  margin: 6px 0;
+  color: #475569;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.download-count {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.download-count svg {
+  margin-right: 6px;
+  color: #94a3b8;
+}
+
+/* Card Actions */
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px 15px;
+  background: #f8fafc;
+  border-top: 1px solid #f1f5f9;
+  gap: 8px;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s;
+  color: white;
+  font-size: 1rem;
+}
+
+.action-btn.edit {
+  background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.action-btn.view {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.action-btn.delete {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.action-btn:hover {
+  transform: scale(1.1);
+  opacity: 0.9;
+}
+
+/* Loading and Empty States */
+.loading, .empty {
+  text-align: center;
+  padding: 40px;
+  grid-column: 1 / -1;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  color: #64748b;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dashboard-content {
+    padding: 15px;
+  }
+
+  .stats-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .exams-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .top-nav {
+    padding: 12px 15px;
+  }
+
+  .user-info span {
+    font-size: 0.9rem;
+  }
+}
+/* Add these new styles and update existing ones */
+
+/* Exam type circle - positioned top right */
+.exam-type-circle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.exam-type-circle.cc {
+  background: #e74c3c;
+}
+
+.exam-type-circle.tp {
+  background: #3498db;
+}
+
+.exam-type-circle.examen {
+  background: #2ecc71;
+}
+
+/* Card adjustments */
+.exam-card {
+  position: relative;
+  padding-top: 15px;
+}
+
+.card-header {
+  padding: 15px 15px 5px 15px;
+  padding-right: 50px; /* Make space for the circle */
+}
+
+/* Remove the exam-type-container styles if they exist */
+.exam-type-container {
+  display: none;
+}
+
+/* Keep all other existing styles the same */
+/* Exam type circle - positioned top right */
+.exam-type-circle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  width: 40px;  /* Increased from 32px */
+  height: 40px;  /* Increased from 32px */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;  /* Increased font size */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  line-height: 1;  /* Ensures text is centered vertically */
+}
+
+/* Keep all other existing styles the same */
+.exam-type-circle.cc {
+  background: #e74c3c;
+}
+
+.exam-type-circle.tp {
+  background: #3498db;
+}
+
+.exam-type-circle.examen {
+  background: #2ecc71;
+}   
+/* Exam type circle styles */
+.exam-type-circle {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  min-width: 60px;  /* Increased to accommodate full text */
+  height: 30px;
+  padding: 0 10px;
+  border-radius: 15px;  /* Pill shape instead of perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: bold;
+  font-size: 0.8rem;
+  text-transform: uppercase;  /* Make type text uppercase */
+  background: #e74c3c;  /* Red color */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+/* Remove the individual color classes since we're using red for all */
+.exam-type-circle.cc,
+.exam-type-circle.tp,
+.exam-type-circle.examen {
+  background: #e74c3c;  /* Unified red color */
+}
